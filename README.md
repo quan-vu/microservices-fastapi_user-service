@@ -1,5 +1,13 @@
 # Microservices with FastAPI - User Service
 
+TODO
+[x] Simple service structure
+[x] CRUD for User Service with MySQL
+[ ] Config Docker for user_service
+[ ] Config Docker for user_service_db
+[ ] Use Cassandra database
+
+
 ## Build Service as Docker Image
 
 ```
