@@ -4,7 +4,8 @@ TODO
 
 1. [x] Simple service structure
 2. [x] CRUD for User Service with MySQL
-3. [ ] Config Docker for user_service
+3. [x] Integrate Pub/Sub messaging with Apache Kafka
+3. [x] Config Docker for user_service
 4. [ ] Config Docker for user_service_db
 5. [ ] Use Cassandra database
 
