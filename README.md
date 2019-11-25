@@ -2,11 +2,11 @@
 
 TODO
 
-[x] Simple service structure
-[x] CRUD for User Service with MySQL
-[ ] Config Docker for user_service
-[ ] Config Docker for user_service_db
-[ ] Use Cassandra database
+1. [x] Simple service structure
+2. [x] CRUD for User Service with MySQL
+3. [ ] Config Docker for user_service
+4. [ ] Config Docker for user_service_db
+5. [ ] Use Cassandra database
 
 ## Kafka integration with Microservices
 
