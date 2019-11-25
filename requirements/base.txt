@@ -4,3 +4,4 @@ sqlalchemy
 async-exit-stack
 async-generator
 mysqlclient
+confluent-kafka
