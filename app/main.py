@@ -29,8 +29,8 @@ def create_user(user: UserCreate, db: Session = Depends(get_db)):
     created_user = crud.create_user(db=db, user=user)
     
     # Publish to Producer
-    p = UserRegisteredProducer()
-    p.send({"email": created_user.email})
+    # p = UserRegisteredProducer()
+    # p.send({"email": created_user.email})
 
     return created_user
 

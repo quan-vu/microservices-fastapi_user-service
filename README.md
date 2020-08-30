@@ -9,6 +9,59 @@ TODO
 4. [ ] Config Docker for user_service_db
 5. [ ] Use Cassandra database
 
+## Project structure
+
+## Quickstart
+
+Setup environment
+
+```shell
+# create virtualenv ith python 3.7
+virtualenv -p python3.7 venv-py3.7
+source venv-py3.7/bin/activate
+pip install -r requirements.in
+
+# Run Database Migrations
+alembic upgrade head
+
+# Run FasiAPI app on special port 
+cd app
+uvicorn main:app --reload --port 8004
+```
+
+#### Test it
+
+**Get list users**
+
+```shell
+curl --location --request GET 'http://127.0.0.1:8004/users/'
+```
+
+**Create a new user**
+
+```shell
+curl --location --request POST 'http://127.0.0.1:8004/users/' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "email" : "info@quanvu.net",
+    "password": "QuanVu123",
+    "is_active": true
+}'
+```
+
+#### Swagger & ReDocs
+
+Swagger 
+
+- http://127.0.0.1:8004/docs
+
+Redoc
+
+- http://127.0.0.1:8004/redoc
+
+
+
+
 ## Kafka integration with Microservices
 
 Now, we have a simple User Service using FastAPI. We will start Kafka on localhost and handle when a user register in our system. We will subscribe the user_registered topic and send email to user in another service like email_service.
@@ -92,19 +145,3 @@ Run a container based on your image:
 ```
 docker run -d --name container_microsercies-fastapi_user-service -p 8001:80 image_microsercies-fastapi_user-service
 ```
-
-## Check it
-
-Open your browser at: http://127.0.0.1:8001/items/5?q=somequery (using your Docker host). 
-
-You will see something like:
-
-```json
-{"item_id": 5, "q": "somequery"}
-```
-
-Interactive API docs
-
-Now you can go to http://192.168.99.100/docs or http://127.0.0.1:8001/docs (or equivalent, using your Docker host).
-
-You will see the automatic interactive API documentation (provided by Swagger UI)
